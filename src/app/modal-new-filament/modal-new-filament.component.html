@@ -1,0 +1,19 @@
+<div class="container-new-filament">
+  <div class="text-field">
+    <label>Filamento:</label>
+
+    <input type="text" [(ngModel)]="newFilament.filament">
+  </div>
+
+  <div class="text-field">
+    <label>Quantida em gramas:</label>
+
+    <input type="number" [(ngModel)]="newFilament.quantityTotal">
+  </div>
+
+  <div class="buttons">
+    <button (click)="saveNewFilament()">Salvar</button>
+
+    <button class="danger" (click)="cancelNewFilament()">Cancelar</button>
+  </div>
+</div>

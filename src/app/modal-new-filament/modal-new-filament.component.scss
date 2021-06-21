@@ -1,0 +1,36 @@
+.container-new-filament{
+    padding-top: 10px;
+    width: 90%;
+    background-color: #181818;
+    color: #aaa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-field{
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.text-field input{
+    width: 100%;
+}
+
+.buttons{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0% 15px 0%;
+}
+
+.buttons button{
+    width: 45%;
+    height: 30px;
+    color: #aaa;
+    background-color: #323232;
+}
+
+.danger{
+    background-color: #790101 !important;
+}

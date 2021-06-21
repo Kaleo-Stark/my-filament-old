@@ -1,5 +1,7 @@
 {
   "name": "my-filament",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

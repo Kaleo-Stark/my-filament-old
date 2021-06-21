@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { ModalConfirmComponent } from '../modal-confirm/modal-confirm.component'
+import { ModalNewFilamentComponent } from '../modal-new-filament/modal-new-filament.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { ModalConfirmComponent } from '../modal-confirm/modal-confirm.component'
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, ModalConfirmComponent]
+  declarations: [HomePage, ModalConfirmComponent, ModalNewFilamentComponent]
 })
 export class HomePageModule {}

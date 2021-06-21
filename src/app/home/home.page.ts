@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,21 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private storage: Storage) {
+    this.storage.create().then(()=>{
+      this.storage.get('listFilaments').then((listFilaments)=>{
+        if(listFilaments){
+          this.listFilaments = listFilaments;
+        }else{
+          this.storage.set('listFilaments', []);
+        }
+      });
+    });
+  }
 
-  public filamentList = [];
+  public text = "tem certeza que deseja excluir o item tal ?"
+
+  public listFilaments = [];
 
   public selectedFilament = {
     name: '',
@@ -19,5 +32,7 @@ export class HomePage {
     intemsList: []
   }
 
-  
+  responseModalConfirm(response){
+    console.log(response)
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-modal-confirm',
@@ -9,7 +9,7 @@ export class ModalConfirmComponent implements OnInit {
 
   @Output() responseEmit = new EventEmitter();
 
-  public text = "Tem certeza que deseja apagar o item suporte de notebook ?"
+  @Input() text: String = "";
 
   constructor() { }
 
