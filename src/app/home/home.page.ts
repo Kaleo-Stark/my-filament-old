@@ -10,19 +10,22 @@ export class HomePage {
 
   constructor(private storage: Storage) {
     this.storage.create().then(()=>{
-      this.storage.get('listFilaments').then((listFilaments)=>{
-        if(listFilaments){
-          this.listFilaments = listFilaments;
-        }else{
-          this.storage.set('listFilaments', []);
-        }
-      });
+      this.populeListFilaments();
     });
   }
 
-  public text = "tem certeza que deseja excluir o item tal ?"
+  public text = ""
 
-  public listFilaments = [];
+  public texts = {
+    'delete-filament': (name) => {return `Tem certeza que deseja apagar o filamento ${name} ?`},
+  }
+
+  public typeConfirm = {
+    type: '',
+    index: 0
+  };
+
+  public listFilaments: any = [];
 
   public selectedFilament = {
     name: '',
@@ -32,7 +35,57 @@ export class HomePage {
     intemsList: []
   }
 
+  populeListFilaments(){
+    this.storage.get('listFilaments').then((listFilaments)=>{
+      if(listFilaments){
+        this.listFilaments = listFilaments;
+      }else{
+        this.storage.set('listFilaments', []);
+      }
+    });
+  }
+
   responseModalConfirm(response){
-    console.log(response)
+    if(response){
+      if(this.typeConfirm.type == 'delete-filament'){
+        this.listFilaments.splice(this.typeConfirm.index, 1);
+
+        this.storage.set('listFilaments', this.listFilaments).then(()=>{
+          this.closeModal('confirm');    
+        });
+      }
+    }else{
+      this.closeModal('confirm');
+    }
+  }
+
+  openModal(modalName){
+    document.querySelector(`div[name="${modalName}"]`).classList.remove('modal-off');
+  }
+
+  closeModal(modalName){
+    document.querySelector(`div[name="${modalName}"]`).classList.add('modal-off')
+  }
+
+  newFilamentClose(updateLis){
+    if(updateLis){
+      this.populeListFilaments();
+    }
+
+    this.closeModal('new-filament');
+  }
+
+  confirmModal(text, name){
+    this.text = this.texts[text](name);
+
+    this.openModal('confirm');
+  }
+
+  deleteFilament(indexFilament){
+    this.typeConfirm.index = indexFilament;
+
+    this.typeConfirm.type = 'delete-filament';
+
+    this.confirmModal('delete-filament', this.listFilaments[indexFilament].filament);
   }
 }

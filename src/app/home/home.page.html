@@ -27,22 +27,22 @@
 
     <div class="filament-list border">
       <ul class="border">
-        <li class="border">
-          <p>Vermelho</p>
+        <li class="border" *ngFor="let item of listFilaments; let indexFilament = index">
+          <p>{{item.filament}}</p>
 
-          <button>Apagar</button>
+          <button (click)="deleteFilament(indexFilament)">Apagar</button>
         </li>
       </ul>
 
-      <button>Adicionar filamento</button>
+      <button (click)="openModal('new-filament')">Adicionar filamento</button>
     </div>
   </div>
 </ion-content>
 
-<div class="modal-backdrop modal-off">
+<div name='confirm' class="modal-backdrop modal-off">
   <app-modal-confirm class="center-component" [text]="text" (responseEmit)="responseModalConfirm($event)"></app-modal-confirm>
 </div>
 
-<div class="modal-backdrop ">
-  <app-modal-new-filament class="center-component"></app-modal-new-filament>
+<div name='new-filament' class="modal-backdrop modal-off">
+  <app-modal-new-filament class="center-component" (newFilamentClose)="newFilamentClose($event)"></app-modal-new-filament>
 </div>
