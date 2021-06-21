@@ -9,4 +9,15 @@ export class HomePage {
 
   constructor() {}
 
+  public filamentList = [];
+
+  public selectedFilament = {
+    name: '',
+    total: 0,
+    spent: 0,
+    current: '',
+    intemsList: []
+  }
+
+  
 }

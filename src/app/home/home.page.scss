@@ -1,27 +1,119 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+p{
+  margin: 0 0 0 20px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+button{
+  background-color: #790101;
+  color: #aaa;
+  width: 94%;
+  height: 30px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+.border{
+  border: solid 1px #323232;
+  border-style: solid;
+  border-radius: 4px;
+}
 
-  color: #8c8c8c;
+.background{
+  width: 100%;
+  height: 100%;
+  background-color: #181818;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 10px 0 10px;
+}
 
+.filament-data{
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.filament-list-item{
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filament-list-item ul{
+  width: 94%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 70%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filament-list-item ul li{
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px #323232;
+  margin: 2px 0px 2px 0px;
+  padding: 5px 0px 5px 0px;
+  list-style-type: none;
+}
+
+.filament-list-item ul li p {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.filament-list-item ul li button{
+  height: 25px;
+  margin-bottom: 5px;
+  background-color: #323232;
+}
+
+.filament-list{
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filament-list ul{
+  width: 94%;
+  display: flex;
+  padding: 0;
+  overflow-y: hidden;
+  overflow-x: auto;
+  margin: 7px;
+}
+
+.filament-list ul li{
+  list-style-type: none;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 0px 5px 0px;
+  margin: 5px 4px 5px 4px;
+}
+
+.filament-list ul li p{
   margin: 0;
 }
 
-#container a {
-  text-decoration: none;
+.filament-list ul li button{
+  background-color: #323232;
+}
+
+.modal-backdrop{
+  width: 100%;
+  height: 100%;
+  float: left;
+  position: absolute;
+  background-color: #3232328c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,0 +1,32 @@
+.container-modal{
+    width: 90%;
+    background-color: #181818;
+    color: #aaa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-modal p{
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 25px;
+}
+
+.container-modal div{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.container-modal div button{
+    width: 40%;
+    height: 30px;
+    color: #aaa;
+    background-color: #323232;
+}
+
+.danger{
+    background-color: #790101 !important;
+}
